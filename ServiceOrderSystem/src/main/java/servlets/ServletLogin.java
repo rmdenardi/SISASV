@@ -50,7 +50,7 @@ public class ServletLogin extends HttpServlet {
 		//this condition will check if the user exists, then log in;
 			if (dao.loginAutentication(modelLogin)) {
 			    request.getSession().setAttribute("usr", modelLogin.getLogin());
-				RequestDispatcher redirect = request.getRequestDispatcher("/principal/menu.jsp");
+				RequestDispatcher redirect = request.getRequestDispatcher("principal/menu.jsp");
 				redirect.forward(request, response);
 				
 			}else {

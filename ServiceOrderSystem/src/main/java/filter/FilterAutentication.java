@@ -65,9 +65,10 @@ public class FilterAutentication extends HttpFilter implements Filter {
 		}
 		
 		} catch (Exception e) {
-			RequestDispatcher redirect = request.getRequestDispatcher("index.jsp");
+			RequestDispatcher redirect = request.getRequestDispatcher("/error.jsp");
 			request.setAttribute("msg", e.getMessage());
 			redirect.forward(request, response);
+			e.printStackTrace();
 		}
 		
 	}

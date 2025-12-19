@@ -7,7 +7,10 @@
 <title>SASV - ERRO</title>
 </head>
 <body>
-<h1> O sistema gerou um erro. Entre em contato com a equipe de suporte.</h1>
 
+<h1> O sistema gerou o seguinte erro, entre em contato com a equipe de suporte.</h1>
+<%
+out.print(request.getAttribute("msg"));
+%>
 </body>
 </html>
