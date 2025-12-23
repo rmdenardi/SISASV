@@ -33,13 +33,14 @@ public class ServletLogin extends HttpServlet {
 		// TODO Auto-generated method stub
 		try {
 			
-		String user = request.getParameter("Login");
-		String password = request.getParameter("Senha");
+		String user = request.getParameter("login");
+		String password = request.getParameter("senha");
 		
-		if ((user.equals("") || password.equals(""))) {
+		if ((user.equals("") || password.equals("")) ||
+				((user.equals(null) || password.equals(null))) ) {
 			
 			RequestDispatcher redirect = request.getRequestDispatcher("/index.jsp");
-			request.setAttribute("msg", "Please inform the correct login/password!");
+			request.setAttribute("msg", "Login ou senha incorretos!");
 			redirect.forward(request, response);
 		}else {
 			
@@ -55,7 +56,7 @@ public class ServletLogin extends HttpServlet {
 				
 			}else {
 				RequestDispatcher redirect = request.getRequestDispatcher("/index.jsp");
-				request.setAttribute("msg", "Please inform a valid user!");
+				request.setAttribute("msg", "Por favor informe um usuário válido!");
 				redirect.forward(request, response);
 			}
 		}
