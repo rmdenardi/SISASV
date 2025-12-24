@@ -23,7 +23,7 @@ public class ServletLogin extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		doPost(request, response);
 	}
 
 	/**
@@ -35,6 +35,7 @@ public class ServletLogin extends HttpServlet {
 			
 		String user = request.getParameter("login");
 		String password = request.getParameter("senha");
+		String url = request.getParameter("url");
 		
 		if ((user.equals("") || password.equals("")) ||
 				((user.equals(null) || password.equals(null))) ) {
@@ -51,7 +52,7 @@ public class ServletLogin extends HttpServlet {
 		//this condition will check if the user exists, then log in;
 			if (dao.loginAutentication(modelLogin)) {
 			    request.getSession().setAttribute("usr", modelLogin.getLogin());
-				RequestDispatcher redirect = request.getRequestDispatcher("principal/menu.jsp");
+				RequestDispatcher redirect = request.getRequestDispatcher("/principal/menu.jsp");
 				redirect.forward(request, response);
 				
 			}else {

@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>SASV - Menu </title>
+<input type="hidden" value="<%=  request.getParameter("url") %>" name="url"/>
+
 </head>
 <body>
 

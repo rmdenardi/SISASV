@@ -12,10 +12,12 @@ import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
+import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
+@WebFilter(urlPatterns = {"/principal/*"})
 public class FilterAutentication extends HttpFilter implements Filter {
        
 	/**
@@ -53,10 +55,9 @@ public class FilterAutentication extends HttpFilter implements Filter {
 		
 		String loggeduser = (String) session.getAttribute("usr");
 		String urlforautentication = req.getServletPath();
-		
-		if (loggeduser == null && !urlforautentication.equalsIgnoreCase("/principal/servLogin")) {
+		if (loggeduser == null && !urlforautentication.equalsIgnoreCase("/principal/ServletLogin")) {
 			RequestDispatcher redirect = request.getRequestDispatcher("/index.jsp?url="+urlforautentication);
-			request.setAttribute("msg", "Please try to log in first!");
+			request.setAttribute("msg", "Por favor realize o login!");
 			redirect.forward(request, response);
 			return;
 		}else {

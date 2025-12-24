@@ -16,4 +16,8 @@
   <url-pattern>/ServletLogin</url-pattern>
   </servlet-mapping>
   
+   <servlet-mapping>
+  <servlet-name>ServletLogin</servlet-name>
+  <url-pattern>/principal/ServletLogin</url-pattern>
+  </servlet-mapping>
 </web-app>
