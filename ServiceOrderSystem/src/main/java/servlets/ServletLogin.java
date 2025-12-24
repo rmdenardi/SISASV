@@ -23,7 +23,23 @@ public class ServletLogin extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+		/**
+		 * logout
+		 */
+		String acao = request.getParameter("acao");	
+		if (acao!= null  && !acao.isEmpty() && acao.equalsIgnoreCase("logout")) {
+				request.getSession().invalidate();
+				RequestDispatcher redirect = request.getRequestDispatcher("/index.jsp");
+				redirect.forward(request, response);
+		}else {
+			
+			/**
+			 * login
+			 */
+			doPost(request, response);
+		}
+		
+		
 	}
 
 	/**
@@ -44,7 +60,6 @@ public class ServletLogin extends HttpServlet {
 			request.setAttribute("msg", "Login ou senha incorretos!");
 			redirect.forward(request, response);
 		}else {
-			
 			
 			ModelLogin modelLogin = new ModelLogin();
 			modelLogin.setLogin(user);
