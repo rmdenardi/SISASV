@@ -5,7 +5,7 @@
                       <div class="pcoded-inner-navbar main-menu">
                           <div class="">
                               <div class="main-menu-header">
-                                  <img class="img-80 img-radius" src="assets/images/avatar-4.png" alt="User-Profile-Image">
+                                  <img class="img-80 img-radius" src="<%= request.getContextPath( ) %>/assets/images/avatar-4.png" alt="User-Profile-Image">
                                   <div class="user-details">
                                       <span id="more-details">
                                       
@@ -44,7 +44,7 @@
                                   </a>
                                   <ul class="pcoded-submenu">
                                       <li class=" ">
-                                          <a href="/ServiceOrderSystem/principal/TelaCadastroComputadores.jsp" class="waves-effect waves-dark">
+                                          <a href="<%= request.getContextPath( ) %>/principal/TelaCadastroComputadores.jsp" class="waves-effect waves-dark">
                                               <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                               <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Computadores</span>
                                               <span class="pcoded-mcaret"></span>
