@@ -30,13 +30,14 @@
 
 										<div class="card-block">
 											<h5 class="sub-title">Cadastro de Usuário</h5>
-											<form action="ServletUser" method="post">
+											<form action="<%=request.getContextPath()%>/ServletUserController"
+												method="post">
 
 
 												<div class="form-group row">
 													<div class="col-sm-11">
-														<input type="text" id="cpf" class="form-control"
-															placeholder="CPF" required="required" />
+														<input type="text" id="cpf" class="form-control date" maxlength="11"
+															placeholder="CPF" required="required" data-mask="999.999.999-99" autocomplete="off" />
 
 													</div>
 												</div>
@@ -44,7 +45,7 @@
 													<div class="col-sm-11">
 														<input type="text" id="fullname"
 															class="form-control form-control-uppercase"
-															placeholder="Nome Completo" required="required">
+															placeholder="Nome Completo" required="required" autocomplete="off">
 													</div>
 
 
@@ -54,7 +55,7 @@
 													<div class="col-sm-11">
 														<input type="text" id="workname"
 															class="form-control form-control-uppercase"
-															placeholder="Nome de Guerra" required="required">
+															placeholder="Nome de Guerra" required="required" autocomplete="off">
 													</div>
 
 
@@ -83,9 +84,17 @@
 
 												<div class="form-group row">
 													<div class="col-sm-11">
-														<input type="text" class="form-control"
-															datamask="99/99/9999" id="birthdate"
-															placeholder="Data de Nascimento" required="required">
+														<input type="text" id="birthdate"
+															placeholder="Data de Nascimento" required="required" maxlength="11"
+															class="form-control date" data-mask=" 99/99/9999" autocomplete="off">
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<div class="col-sm-11">
+														<input type="text" id="phone" placeholder="Telefone"
+															class="form-control date" data-mask="(99) 99999-9999" maxlength="11"
+															required="required" autocomplete="off">
 													</div>
 
 												</div>
@@ -93,7 +102,7 @@
 												<div class="form-group row">
 													<div class="col-sm-11">
 														<input type="text" class="form-control" id="email"
-															placeholder="email" required="required">
+															placeholder="email" required="required" autocomplete="off">
 													</div>
 
 												</div>
@@ -101,7 +110,7 @@
 												<div class="form-group row">
 													<div class="col-sm-11">
 														<input type="text" class="form-control" id="login"
-															placeholder="login" required="required">
+															placeholder="login" required="required" autocomplete="off">
 													</div>
 
 												</div>
@@ -109,7 +118,7 @@
 												<div class="form-group row">
 													<div class="col-sm-11">
 														<input type="text" class="form-control" id="password"
-															placeholder="senha" required="required">
+															placeholder="senha" required="required" autocomplete="off">
 													</div>
 
 												</div>
