@@ -53,7 +53,7 @@
 
 												<div class="form-group row">
 													<div class="col-sm-11">
-														<input type="text" id="workname"
+														<input type="text" id="workname" name="workname"
 															class="form-control form-control-uppercase"
 															placeholder="Nome de Guerra" required="required" autocomplete="off">
 													</div>
@@ -63,8 +63,8 @@
 												<div class="form-group row">
 
 													<div class="col-sm-11">
-														<select name="select" class="form-control">
-															<option value="opt2">Selecione o Posto/Graduação</option>
+														<select name="rank" class="form-control">
+															<option value="opt">Selecione o Posto/Graduação</option>
 															<option value="cel">CORONEL</option>
 															<option value="tenente-coronel">TENENTE-CORONEL</option>
 															<option value="major">MAJOR</option>

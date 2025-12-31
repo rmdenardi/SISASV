@@ -23,7 +23,17 @@ public class ServletUserController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String cpf = request.getParameter("cpf");
-		String fullname = request.getParameter("fullname");
+		String name = request.getParameter("fullname");
+		String rank = request.getParameter("rank");
+		String birthdate = request.getParameter("birthdate");
+		String phone = request.getParameter("phone");
+		String email = request.getParameter("email");
+		String login = request.getParameter("login");
+		String password = request.getParameter("password");
+		
+		
+		
+		
 		
 		
 
